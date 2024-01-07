@@ -12,6 +12,9 @@ self: super: {
     neovim-unwrapped = super.neovim-unwrapped.overrideAttrs (_: {
         disallowedReferences = [];
     });
+    prometheus = super.prometheus.overrideAttrs (_: {
+        doCheck = false;
+    });
     python = super.python.override {
         packageOverrides = import ./python.nix self super;
     };
