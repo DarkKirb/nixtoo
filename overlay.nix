@@ -9,8 +9,8 @@ self: super: {
     ruby = super.ruby.overrideAttrs (_: {
         disallowedRequisites = [];
     });
-    neovim = super.neovim.overrideAttrs (_: {
-        disallowedRequisites = [];
+    neovim-unwrapped = super.neovim-unwrapped.overrideAttrs (_: {
+        disallowedReferences = [];
     });
     python = super.python.override {
         packageOverrides = import ./python.nix self super;
