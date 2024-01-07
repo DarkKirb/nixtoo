@@ -16,6 +16,10 @@ self: super: {
         packageOverrides = import ./python.nix self super;
     };
     pythonPackages = self.python.pkgs;
+    python3 = super.python3.override {
+        packageOverrides = import ./python.nix self super;
+    };
+    python3Packages = self.python3.pkgs;
     python311 = super.python311.override {
         packageOverrides = import ./python.nix self super;
     };
