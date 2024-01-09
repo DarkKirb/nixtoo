@@ -15,6 +15,9 @@ self: super: {
     prometheus = super.prometheus.overrideAttrs (_: {
         doCheck = false;
     });
+    grafana = super.grafana.overrideAttrs (_: {
+        doCheck = false;
+    });
     python = super.python.override {
         packageOverrides = import ./python.nix self super;
     };
