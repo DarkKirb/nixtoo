@@ -1,21 +1,18 @@
 self: super: {
     # General fixes, broken tests, broken builds with ca derivations, etc
-    redis = super.redis.overrideAttrs (_: {
+    grafana = super.grafana.overrideAttrs (_: {
         doCheck = false;
     });
-    openldap = super.openldap.overrideAttrs (_: {
+    libuv = super.libuv.overrideAttrs (_: {
         doCheck = false;
-    });
-    ruby = super.ruby.overrideAttrs (_: {
-        disallowedRequisites = [];
     });
     neovim-unwrapped = super.neovim-unwrapped.overrideAttrs (_: {
         disallowedReferences = [];
     });
-    prometheus = super.prometheus.overrideAttrs (_: {
+    openldap = super.openldap.overrideAttrs (_: {
         doCheck = false;
     });
-    grafana = super.grafana.overrideAttrs (_: {
+    prometheus = super.prometheus.overrideAttrs (_: {
         doCheck = false;
     });
     python = super.python.override {
@@ -30,4 +27,10 @@ self: super: {
         packageOverrides = import ./python.nix self super;
     };
     python311Packages = self.python311.pkgs;
+    redis = super.redis.overrideAttrs (_: {
+        doCheck = false;
+    });
+    ruby = super.ruby.overrideAttrs (_: {
+        disallowedRequisites = [];
+    });
 }
