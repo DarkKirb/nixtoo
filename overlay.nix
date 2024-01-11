@@ -3,9 +3,6 @@ self: super: {
     grafana = super.grafana.overrideAttrs (_: {
         doCheck = false;
     });
-    libuv = super.libuv.overrideAttrs (_: {
-        doCheck = false;
-    });
     neovim-unwrapped = super.neovim-unwrapped.overrideAttrs (_: {
         disallowedReferences = [];
     });
