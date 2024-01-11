@@ -6,6 +6,12 @@ self: super: {
     neovim-unwrapped = super.neovim-unwrapped.overrideAttrs (_: {
         disallowedReferences = [];
     });
+    openjdk8 = super.openjdk8.overrideAttrs (_: {
+        disallowedReferences = [];
+    });
+    openjdk19 = super.openjdk19.overrideAttrs (_: {
+        disallowedReferences = [];
+    });
     openldap = super.openldap.overrideAttrs (_: {
         doCheck = false;
     });
