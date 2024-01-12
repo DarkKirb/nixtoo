@@ -39,4 +39,7 @@ self: super: {
     ruby = super.ruby.overrideAttrs (_: {
         disallowedRequisites = [];
     });
+    thunderbird-bin = super.thunderbird-bin.overrideAttrs (_: {
+        disallowedRequisites = [];
+    });
 }
