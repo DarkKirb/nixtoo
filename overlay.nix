@@ -3,6 +3,9 @@ self: super: {
     grafana = super.grafana.overrideAttrs (_: {
         doCheck = false;
     });
+    libuv = if self.system == "i686-linux" then super.libuv.overrideAttrs (_: {
+        doCheck = false;
+    }) else super.libuv;
     neovim-unwrapped = super.neovim-unwrapped.overrideAttrs (_: {
         disallowedReferences = [];
     });
@@ -33,11 +36,6 @@ self: super: {
     redis = super.redis.overrideAttrs (_: {
         doCheck = false;
     });
-#    roc-toolkit = super.roc-toolkit.override {
-#        libuv = self.libuv.overrideAttrs (_: {
-#            doCheck = false;
-#        });
-#    };
     ruby = super.ruby.overrideAttrs (_: {
         disallowedRequisites = [];
     });
