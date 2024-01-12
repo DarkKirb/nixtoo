@@ -33,11 +33,11 @@ self: super: {
     redis = super.redis.overrideAttrs (_: {
         doCheck = false;
     });
-    roc-toolkit = super.roc-toolkit.override {
-        libuv = self.libuv.overrideAttrs (_: {
-            doCheck = false;
-        });
-    };
+#    roc-toolkit = super.roc-toolkit.override {
+#        libuv = self.libuv.overrideAttrs (_: {
+#            doCheck = false;
+#        });
+#    };
     ruby = super.ruby.overrideAttrs (_: {
         disallowedRequisites = [];
     });
