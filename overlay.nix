@@ -42,4 +42,7 @@ self: super: {
     thunderbird-bin = super.thunderbird-bin.overrideAttrs (_: {
         disallowedRequisites = [];
     });
+    xapian = if self.system == "i686-linux" then super.xapian.overrideAttrs (_: {
+        doCheck = false; # Impossible to run
+    }) else super.xapian;
 }
